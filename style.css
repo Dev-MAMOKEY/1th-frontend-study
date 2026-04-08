@@ -35,3 +35,17 @@ body {
   padding-bottom: 20px;
   /* padding-bottom으로 content에서 border까지의 하단 거리 조정 */
 }
+
+
+/* h2 태그(섹션 주제)에 darkblue 색상 적용 및 폰트 적용 */
+h2 {
+  color:darkblue;
+  font-family: fantasy, sans-serif;
+  /* 폰트 설정 : fantasy 폰트 적용 후 안 되면 sans-serif(적용) */
+  }
+
+/* id는 재사용하지 않고, 유일 (class 보다 강력하므로 같은 이름의 class가 묻힘) */
+#gitpage {
+  color:firebrick;
+  font-family: 'Courier New', Courier, monospace;
+}
