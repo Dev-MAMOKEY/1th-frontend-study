@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  flex-direction: column; /* 세로 방향으로 header, main, footer 정렬 */
+  align-items: center;    /* 가로방향으로 header, main, footer 정렬 */
+}
+
+/* 테두리 */
+.borderline {
+    border-width: 3px; /* 테두리 두께*/
+    border-style: solid; /* 테두리 종류 : 실선 */
+    border-color: green; /* 테두리 색상 */
+}
