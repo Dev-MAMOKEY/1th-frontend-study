@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<!-- 한국어로 작성 -->
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TailWind</title>
+  <!-- CDN : Content Delivery Network, 인터넷에 있는 파일을 링크로 가져다 쓰는 것. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<!-- 배경색 블랙, 텍스트는 화이트로 -->
+<body class="bg-black text-white">
+
+  <!-- grid(행렬)로 자식 요소 배치하고 비율을 16:9로 설정 -->
+  <div class="grid aspect-[16/9]">
+
+    <!-- 비디오 배경, 여기서 column과 row의 start가 의미하는 건 "행렬" -->
+    <video src="./dvd.mp4" autoplay muted loop class="col-start-1 row-start-1"></video>
+
+    <!-- 네비게이션 속성 행렬(1, 1)에 요소 배치 -->
+    <nav class="col-start-1 row-start-1 m-8 text-sm font-medium border text-white mt-3">
+      
+      <!-- 네이게이션들 간 기본 가로축 정렬 및 버튼 간격 조정 -->
+      <div class="flex gap-3">
+        
+        <!-- 3xl 옵션은 꽤 크게 텍스트를 조정, 폰트 조정, 넷플의 글자간격 가깝게, 색상 강도 조정   -->
+        <button class="text-3xl font-extrabold tracking-tight text-red-600">NETFLIX</button>
+        <button>홈</button>
+        <button>시리즈</button>
+        <button>영화</button>
+        <button>게임</button>
+        <button>NEW! 요즘 대세 콘텐츠</button>
+        <button>내가 찜한 리스트</button>
+        <button>언어별로 찾아보기</button>
+      </div>
+    </nav>
+
+  </div>
+
+</body>
+
+</html>
