@@ -15,51 +15,76 @@
 
 <body class="bg-black text-white grid">
 
-  <!-- header와 main의 배치 -->
-  <div class="relative">
+  <!-- 헤더 grid로 내부 요소 배치 -->
+  <header class="grid">
 
-    <!-- 헤더 grid로 내부 요소 배치 -->
-    <header class="grid">
-
-
-      <!-- 비디오 배경, 여기서 column과 row의 start가 의미하는 건 "행렬" -->
-      <video src="./resource/dvd.mp4" autoplay muted loop aspect-video
-        class="col-start-1 row-start-1 w-full h-full"></video>
+    <!-- 비디오 배경, 여기서 column과 row의 start가 의미하는 건 "행렬" -->
+    <video src="./resource/dvd.mp4" autoplay muted loop aspect-video
+      class="col-start-1 row-start-1 w-full h-full"></video>
 
 
-      <!-- 네비게이션 속성 행렬(1, 1)에 요소 배치  -->
-      <nav class="col-start-1 row-start-1 ml-[4vw] mt-[1vw] mr-[4vw] ">
+    <!-- 네비게이션 속성 행렬(1, 1)에 요소 배치  -->
+    <nav class="col-start-1 row-start-1 ml-[4vw] mt-[1vw] mr-[4vw] ">
 
 
-        <!-- 왼쪽 넷플릭스, 메뉴들 -->
-        <div class="flex gap-[1vw] origin-top-left text-white text-[0.9vw]">
+      <!-- 왼쪽 넷플릭스, 메뉴들 -->
+      <div class="flex gap-[1vw] origin-top-left text-white text-[0.9vw]">
 
-          <!-- 텍스트 및 폰트 조정, 넷플의 글자간격 가깝게, 색상 강도 조정   -->
-          <button class="text-[2vw] font-extrabold tracking-tight text-red-600 mr-[0.5vw]">NETFLIX</button>
+        <!-- 텍스트 및 폰트 조정, 넷플의 글자간격 가깝게, 색상 강도 조정   -->
+        <button class="text-[2vw] font-extrabold tracking-tight text-red-600 mr-[0.5vw]">NETFLIX</button>
 
-          <!-- 화면창 lg 이상일 경우 flex 아니면 hidden -->
-          <div class="hidden lg:flex gap-[0.8vw] mt-[0.2vw]">
-            <button>홈</button>
-            <button>시리즈</button>
-            <button>영화</button>
-            <button>게임</button>
-            <button>NEW! 요즘 대세 콘텐츠</button>
-            <button>내가 찜한 리스트</button>
-            <button>언어별로 찾아보기</button>
+        <!-- 화면창 lg 이상일 경우 flex 아니면 hidden -->
+        <div class="hidden lg:flex gap-[0.8vw] mt-[0.2vw]">
+          <button>홈</button>
+          <button>시리즈</button>
+          <button>영화</button>
+          <button>게임</button>
+          <button>NEW! 요즘 대세 콘텐츠</button>
+          <button>내가 찜한 리스트</button>
+          <button>언어별로 찾아보기</button>
+        </div>
+
+        <!-- 화면창lg 이상일 경우 메뉴 상태창 hidden / group으로 묶기 / 현재 div를 기준으로 드롭다운 메뉴들을 absolute해서 아래에 고정 출력  -->
+        <div class="relative lg:hidden mt-[0.8vw] group">
+
+          <!-- 메뉴 상태 버튼 -->
+          <button class="cursor-pointer list-none">
+            메뉴⏷
+          </button>
+
+          <!-- 메뉴 상태 버튼에 가져다 댔을 때 (hover) 일 경우 flex 설정 / left-1/2 : 내 왼쪽 끝을 부모의 50%만큼 놓아라 -->
+          <!-- translateX는 자기 자신을 기준으로 오른쪽, -translateX는 자기 자신을 기준으로 왼쪽으로 자기자신의 절반만큼(1/2) 가라  -->
+          <div
+            class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:flex flex-col gap-[0.5vw] bg-black/60 w-[12vw]">
+            <button class="text-center">홈</button>
+            <button class="text-center">시리즈</button>
+            <button class="text-center">영화</button>
+            <button class="text-center">게임</button>
+            <button class="text-center">NEW! 요즘 대세 콘텐츠</button>
+            <button class="text-center">내가 찜한 리스트</button>
+            <button class="text-center">언어별로 찾아보기</button>
           </div>
+        </div>
 
-          <!-- 화면창lg 이상일 경우 메뉴 상태창 hidden / group으로 묶기 / 현재 div를 기준으로 드롭다운 메뉴들을 absolute해서 아래에 고정 출력  -->
-          <div class="relative lg:hidden mt-[0.8vw] group">
 
-            <!-- 메뉴 상태 버튼 -->
-            <button class="cursor-pointer list-none">
-              메뉴⏷
+
+        <!-- 부모 div의 우측 위 기준으로 스케일이 바뀜, 왼쪽 div와 거리두기 -->
+        <div class="origin-top-right ml-auto flex items-center gap-[1vw]">
+
+          <!-- 검색  -->
+          <button class="cursor-pointer w-[3.2vw] h-[3.2vw]">
+            <img src="./resource/search.png" />
+          </button>
+
+
+          <!-- 알림 -->
+          <div class="relative group w-[3.2vw] h-[3.2vw]">
+
+            <button class="cursor-pointer ">
+              <img src="./resource/bell.png" />
             </button>
 
-            <!-- 메뉴 상태 버튼에 가져다 댔을 때 (hover) 일 경우 flex 설정 / left-1/2 : 내 왼쪽 끝을 부모의 50%만큼 놓아라 -->
-            <!-- translateX는 자기 자신을 기준으로 오른쪽, -translateX는 자기 자신을 기준으로 왼쪽으로 자기자신의 절반만큼(1/2) 가라  -->
-            <div
-              class="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:flex flex-col gap-[0.5vw] bg-black/60 w-[12vw]">
+            <div class="absolute right-1/2 top-full hidden group-hover:flex flex-col gap-[0.5vw] bg-black/60 w-[14vw]">
               <button class="text-center">홈</button>
               <button class="text-center">시리즈</button>
               <button class="text-center">영화</button>
@@ -68,105 +93,74 @@
               <button class="text-center">내가 찜한 리스트</button>
               <button class="text-center">언어별로 찾아보기</button>
             </div>
+
           </div>
 
 
+          <!-- 프로필 -->
+          <div class="relative group w-[3.2vw] h-[3.2vw]">
 
-          <!-- 부모 div의 우측 위 기준으로 스케일이 바뀜, 왼쪽 div와 거리두기 -->
-          <div class="origin-top-right ml-auto flex items-center gap-[1vw]">
-
-            <!-- 검색  -->
-            <button class="cursor-pointer w-[3.2vw] h-[3.2vw]">
-              <img src="./resource/search.png" />
+            <button class="cursor-pointer ">
+              <img src="./resource/profile.jpg" class="rounded-xl" />
             </button>
 
-
-            <!-- 알림 -->
-            <div class="relative group w-[3.2vw] h-[3.2vw]">
-
-              <button class="cursor-pointer ">
-                <img src="./resource/bell.png" />
-              </button>
-
-              <div
-                class="absolute right-1/2 top-full hidden group-hover:flex flex-col gap-[0.5vw] bg-black/60 w-[14vw]">
-                <button class="text-center">홈</button>
-                <button class="text-center">시리즈</button>
-                <button class="text-center">영화</button>
-                <button class="text-center">게임</button>
-                <button class="text-center">NEW! 요즘 대세 콘텐츠</button>
-                <button class="text-center">내가 찜한 리스트</button>
-                <button class="text-center">언어별로 찾아보기</button>
-              </div>
-
+            <div
+              class="absolute right-1/2 translate-x-1/4 top-full hidden group-hover:flex flex-col gap-[0.5vw] bg-black/60 w-[10vw]">
+              <button class="text-center">홈</button>
+              <button class="text-center">시리즈</button>
+              <button class="text-center">영화</button>
+              <button class="text-center">게임</button>
+              <button class="text-center">NEW! 요즘 대세 콘텐츠</button>
+              <button class="text-center">내가 찜한 리스트</button>
+              <button class="text-center">언어별로 찾아보기</button>
             </div>
 
-
-            <!-- 프로필 -->
-            <div class="relative group w-[3.2vw] h-[3.2vw]">
-
-              <button class="cursor-pointer ">
-                <img src="./resource/profile.jpg" class="rounded-xl" />
-              </button>
-
-              <div
-                class="absolute right-1/2 translate-x-1/4 top-full hidden group-hover:flex flex-col gap-[0.5vw] bg-black/60 w-[10vw]">
-                <button class="text-center">홈</button>
-                <button class="text-center">시리즈</button>
-                <button class="text-center">영화</button>
-                <button class="text-center">게임</button>
-                <button class="text-center">NEW! 요즘 대세 콘텐츠</button>
-                <button class="text-center">내가 찜한 리스트</button>
-                <button class="text-center">언어별로 찾아보기</button>
-              </div>
-
-            </div>
           </div>
         </div>
-      </nav>
-
-
-      <!-- 중간 문구 -->
-      <div class="col-start-1 row-start-1 flex flex-col gap-[1.5vw] justify-center ml-[4vw]">
-
-        <img src="./resource/dvd_cover.png" class="w-[20vw] h-[3vw]" />
-
-        <p class="text-[1.2vw]">
-          지금, 우리가 사는 지구에서 펼쳐지는 이야기.
-        </p>
-
-        <div class="flex gap-[1vw]">
-
-          <button
-            class="flex items-center gap-[0.5vw] px-[2vw] py-[0.8vw] bg-white text-black font-semibold rounded text-[1vw]">
-            ▶
-            <span>재생</span>
-          </button>
-
-          <button
-            class="flex items-center gap-[0.5vw] px-[2vw] py-[0.8vw] bg-black/30 text-white font-semibold rounded backdrop-blur text-[1vw]">
-            <span>ℹ</span>
-            <span>상세 정보</span>
-          </button>
-
-        </div>
       </div>
+    </nav>
 
-  </div>
+
+    <!-- 중간 문구 -->
+    <div class="col-start-1 row-start-1 flex flex-col gap-[1.5vw] justify-center ml-[4vw]">
+
+      <img src="./resource/dvd_cover.png" class="w-[20vw] h-[3vw]" />
+
+      <p class="text-[1.2vw]">
+        지금, 우리가 사는 지구에서 펼쳐지는 이야기.
+      </p>
+
+      <div class="flex gap-[1vw]">
+
+        <button
+          class="flex items-center gap-[0.5vw] px-[2vw] py-[0.8vw] bg-white text-black font-semibold rounded text-[1vw]">
+          ▶
+          <span>재생</span>
+        </button>
+
+        <button class="flex items-center gap-[0.5vw] px-[2vw] py-[0.8vw] bg-black/30 rounded backdrop-blur">
+          <img src="./resource/icon_info.png" class="w-[1.5vw] h-[1.5vw]">
+          <span class="text-white font-semibold text-[1vw]">상세 정보</span>
+        </button>
+
+      </div>
+    </div>
+
+    </div>
 
 
-  <!-- 하단 그라데이션 오버레이(덮어 올리는 레이어) / 방향, 시작, 중간, 끝(투명) -->
-  <div class="absolute mt-[47vw] w-full h-[10vw] 
+    <!-- 하단 그라데이션 오버레이(덮어 올리는 레이어) / 방향, 시작, 중간, 끝(투명) -->
+    <div class="absolute mt-[47vw] w-full h-[10vw] 
   bg-gradient-to-t from-black via-black to-transparent">
-  </div>
+    </div>
 
   </header>
 
 
 
   <!-- 주요 내용 -->
-  <!-- absolute는 부모 기준으로 배치, 부모요소 div의 비율로 왼쪽으로 4% 차지, 넓이는 96%차지 -->
-  <main class="absolute top-[44vw] left-[4%] w-[96%] flex flex-col gap-[5vw] md:gap-[4vw] lg:gap-[3vw]">
+  <!-- margin을 음수 값으로 넣으면 위로 올라감. 넓이는 96%차지 -->
+  <main class="top-[44vw] -mt-[10vw] ml-[4%] w-[96%] flex flex-col gap-[5vw] md:gap-[4vw] lg:gap-[3vw]">
 
     <!-- 누구나 사랑하는 명작 -->
     <section class="flex flex-col gap-[0.5vw]">
@@ -187,7 +181,7 @@
 
           <!-- TOP 10 / leading-none : 줄간격 없애기 -->
           <div class="absolute top-0 right-0 bg-red-600 text-white font-bold px-[0.5vw] rounded py-[0.2vw]">
-            <div class="flex flex-col items-center leading-none"> 
+            <div class="flex flex-col items-center leading-none">
               <span class="text-[0.7vw]">TOP</span>
               <span class="text-[1vw]">10</span>
             </div>
@@ -195,8 +189,8 @@
 
           <!-- 하단 텍스트 -->
           <div class="absolute bottom-0 font-semibold flex justify-center text-[0.7vw] w-full">
-              <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
-              <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
+            <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
+            <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
           </div>
 
         </div>
@@ -204,7 +198,7 @@
 
 
         <img src="https://picsum.photos/300/170?random=2" class="w-[23.5%] shrink-0 aspect-video rounded" />
-        
+
         <!-- 카드 -->
         <!-- 부모요소 틀 16/9 -->
         <div class="relative w-[23.5%] shrink-0 aspect-video rounded overflow-hidden">
@@ -214,7 +208,7 @@
 
           <!-- TOP 10 / leading-none : 줄간격 없애기 -->
           <div class="absolute top-0 right-0 bg-red-600 text-white font-bold px-[0.5vw] rounded py-[0.2vw]">
-            <div class="flex flex-col items-center leading-none"> 
+            <div class="flex flex-col items-center leading-none">
               <span class="text-[0.7vw]">TOP</span>
               <span class="text-[1vw]">10</span>
             </div>
@@ -222,8 +216,8 @@
 
           <!-- 하단 텍스트 -->
           <div class="absolute bottom-0 font-semibold flex justify-center text-[0.7vw] w-full">
-              <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
-              <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
+            <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
+            <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
           </div>
 
         </div>
@@ -271,11 +265,11 @@
 
           <!-- 하단 텍스트 -->
           <div class="absolute bottom-0 font-semibold flex justify-center text-[0.7vw] w-full">
-              <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none">새로운 시즌</span>
+            <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none">새로운 시즌</span>
           </div>
 
         </div>
-        
+
         <!-- 세번 째 사진 -->
         <!-- 부모요소 틀 16/9 -->
         <div class="relative w-[23.5%] shrink-0 aspect-video rounded overflow-hidden">
@@ -285,7 +279,7 @@
 
           <!-- TOP 10 / leading-none : 줄간격 없애기 -->
           <div class="absolute top-0 right-0 bg-red-600 text-white font-bold px-[0.5vw] rounded py-[0.2vw]">
-            <div class="flex flex-col items-center leading-none"> 
+            <div class="flex flex-col items-center leading-none">
               <span class="text-[0.7vw]">TOP</span>
               <span class="text-[1vw]">10</span>
             </div>
@@ -293,8 +287,8 @@
 
           <!-- 하단 텍스트 -->
           <div class="absolute bottom-0 font-semibold flex justify-center text-[0.7vw] w-full">
-              <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
-              <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
+            <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
+            <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
           </div>
 
         </div>
@@ -319,7 +313,7 @@
 
 
 
-<!-- 회원님을 위해 엄선한 오늘의 콘텐츠 -->
+    <!-- 회원님을 위해 엄선한 오늘의 콘텐츠 -->
     <section class="flex flex-col gap-[0.5vw]">
 
       <span class="text-[clamp(12px,0.8vw,18px)]">회원님을 위해 엄선한 오늘의 콘텐츠</span>
@@ -339,11 +333,11 @@
         <div class="relative w-[23.5%] shrink-0 aspect-video rounded overflow-hidden">
 
           <!-- 이미지 / 화면을 부모요소 틀에 맞게 다 채움 -->
-          <img src="https://picsum.photos/300/170?random=2" class="w-full h-full"/>
+          <img src="https://picsum.photos/300/170?random=2" class="w-full h-full" />
 
           <!-- TOP 10 / leading-none : 줄간격 없애기 -->
           <div class="absolute top-0 right-0 bg-red-600 text-white font-bold px-[0.5vw] rounded py-[0.2vw]">
-            <div class="flex flex-col items-center leading-none"> 
+            <div class="flex flex-col items-center leading-none">
               <span class="text-[0.7vw]">TOP</span>
               <span class="text-[1vw]">10</span>
             </div>
@@ -351,15 +345,15 @@
 
           <!-- 하단 텍스트 -->
           <div class="absolute bottom-0 font-semibold flex justify-center text-[0.7vw] w-full">
-              <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
-              <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
+            <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
+            <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
           </div>
 
         </div>
 
         <!-- 세 번째 사진 -->
         <img src="https://picsum.photos/300/170?random=3" class="w-[23.5%] shrink-0 aspect-video rounded" />
-        
+
         <!-- 네 번째 사진 -->
         <!-- 부모요소 틀 16/9 -->
         <div class="relative w-[23.5%] shrink-0 aspect-video rounded overflow-hidden">
@@ -369,7 +363,7 @@
 
           <!-- TOP 10 / leading-none : 줄간격 없애기 -->
           <div class="absolute top-0 right-0 bg-red-600 text-white font-bold px-[0.5vw] rounded py-[0.2vw]">
-            <div class="flex flex-col items-center leading-none"> 
+            <div class="flex flex-col items-center leading-none">
               <span class="text-[0.7vw]">TOP</span>
               <span class="text-[1vw]">10</span>
             </div>
@@ -414,7 +408,7 @@
 
           <!-- TOP 10 / leading-none : 줄간격 없애기 -->
           <div class="absolute top-0 right-0 bg-red-600 text-white font-bold px-[0.5vw] rounded py-[0.2vw]">
-            <div class="flex flex-col items-center leading-none"> 
+            <div class="flex flex-col items-center leading-none">
               <span class="text-[0.7vw]">TOP</span>
               <span class="text-[1vw]">10</span>
             </div>
@@ -422,8 +416,8 @@
 
           <!-- 하단 텍스트 -->
           <div class="absolute bottom-0 font-semibold flex justify-center text-[0.7vw] w-full">
-              <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
-              <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
+            <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
+            <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
           </div>
 
         </div>
@@ -431,7 +425,7 @@
 
 
         <img src="https://picsum.photos/300/170?random=2" class="w-[23.5%] shrink-0 aspect-video rounded" />
-        
+
         <!-- 카드 -->
         <!-- 부모요소 틀 16/9 -->
         <div class="relative w-[23.5%] shrink-0 aspect-video rounded overflow-hidden">
@@ -441,7 +435,7 @@
 
           <!-- TOP 10 / leading-none : 줄간격 없애기 -->
           <div class="absolute top-0 right-0 bg-red-600 text-white font-bold px-[0.5vw] rounded py-[0.2vw]">
-            <div class="flex flex-col items-center leading-none"> 
+            <div class="flex flex-col items-center leading-none">
               <span class="text-[0.7vw]">TOP</span>
               <span class="text-[1vw]">10</span>
             </div>
@@ -449,8 +443,8 @@
 
           <!-- 하단 텍스트 -->
           <div class="absolute bottom-0 font-semibold flex justify-center text-[0.7vw] w-full">
-              <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
-              <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
+            <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
+            <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
           </div>
 
         </div>
@@ -464,7 +458,7 @@
 
           <!-- 하단 텍스트 -->
           <div class="absolute bottom-0 font-semibold flex justify-center text-[0.7vw] w-full">
-              <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none">새로운 시즌</span>
+            <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none">새로운 시즌</span>
           </div>
 
         </div>
@@ -507,7 +501,7 @@
 
           <!-- TOP 10 / leading-none : 줄간격 없애기 -->
           <div class="absolute top-0 right-0 bg-red-600 text-white font-bold px-[0.5vw] rounded py-[0.2vw]">
-            <div class="flex flex-col items-center leading-none"> 
+            <div class="flex flex-col items-center leading-none">
               <span class="text-[0.7vw]">TOP</span>
               <span class="text-[1vw]">10</span>
             </div>
@@ -515,7 +509,7 @@
 
           <!-- 하단 텍스트 -->
           <div class="absolute bottom-0 font-semibold flex justify-center text-[0.7vw] w-full">
-              <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none">새로운 시즌</span>
+            <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none">새로운 시즌</span>
           </div>
 
         </div>
@@ -523,7 +517,7 @@
 
         <!-- 두번째 사진 -->
         <img src="https://picsum.photos/300/170?random=2" class="w-[23.5%] shrink-0 aspect-video rounded" />
-        
+
         <!-- 세번 째 사진 -->
         <img src="https://picsum.photos/300/170?random=3" class="w-[23.5%] shrink-0 aspect-video rounded" />
 
@@ -536,7 +530,7 @@
 
           <!-- TOP 10 / leading-none : 줄간격 없애기 -->
           <div class="absolute top-0 right-0 bg-red-600 text-white font-bold px-[0.5vw] rounded py-[0.2vw]">
-            <div class="flex flex-col items-center leading-none"> 
+            <div class="flex flex-col items-center leading-none">
               <span class="text-[0.7vw]">TOP</span>
               <span class="text-[1vw]">10</span>
             </div>
@@ -544,8 +538,8 @@
 
           <!-- 하단 텍스트 -->
           <div class="absolute bottom-0 font-semibold flex justify-center text-[0.7vw] w-full">
-              <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
-              <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
+            <span class="bg-red-600 px-[0.4vw] text-white rounded rounded-b-none rounded-tr-none">새 에피소드</span>
+            <span class="bg-white px-[0.4vw] text-black rounded rounded-b-none rounded-tl-none">지금 시청하기</span>
           </div>
 
         </div>
@@ -569,8 +563,75 @@
 
   </main>
 
-  </div>
+
+
+  <!-- footer -->
+  <footer class="w-full text-gray-400 mt-[8vw] pb-[4vw]">
+
+    <!-- 화면 커졌을 때도 조건 적용 -->
+    <div class="w-full md:max-w-[1000px] mx-auto px-[4vw] flex flex-col gap-[2vw]">
+
+      <!-- SNS -->
+      <section>
+        <div class="flex items-center gap-6 text-white text-[clamp(18px,1.3vw,24px)]">
+          <button>f</button>
+          <button class="w-[clamp(18px,1.3vw,24px)] h-[clamp(18px,1.3vw,24px)]"><img src="./resource/icon_instagram.png"
+              class="w-full h-full"></button>
+          <button>𝕏</button>
+          <button class="w-[clamp(18px,1.3vw,24px)] h-[clamp(18px,1.3vw,24px)]"><img src="./resource/icon_youtube.png"
+              class="w-full h-full"></button>
+        </div>
+      </section>
+
+
+      <!-- 링크들 -->
+      <section>
+        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-12 text-[clamp(12px,0.9vw,16px)]">
+          <div class="flex flex-col gap-4">
+            <a href="#">화면 해설</a>
+            <a href="#">투자 정보(IR)</a>
+            <a href="#">법적 고지</a>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <a href="#">고객 센터</a>
+            <a href="#">입사 정보</a>
+            <a href="#">쿠키 설정</a>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <a href="#">기프트카드</a>
+            <a href="#">이용 약관</a>
+            <a href="#">회사 정보</a>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <a href="#">미디어 센터</a>
+            <a href="#">개인정보</a>
+            <a href="#">문의하기</a>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 회사 정보 -->
+      <section>
+        <div class="mt-10 text-[clamp(11px,0.85vw,14px)] leading-[1.8] text-gray-500">
+          <p>넷플릭스서비시스코리아 유한회사 통신판매업신고번호: 제2018-서울종로-0426호 전화번호: 00-308-321-0161 (수신자 부담)</p>
+          <p>대표: 레지널드 숀 톰슨</p>
+          <p>이메일 주소: korea@netflix.com</p>
+          <p>주소: 대한민국 서울특별시 종로구 우정국로 26, 센트로폴리스 A동 20층 우편번호 03161</p>
+          <p>사업자등록번호: 165-87-00119</p>
+          <p>클라우드 호스팅: Amazon Web Services Inc.</p>
+          <p>공정거래위원회 웹사이트</p>
+        </div>
+      </section>
+    </div>
+  </footer>
 
 </body>
+
+
+
 
 </html>
