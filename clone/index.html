@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <title>YouTube</title>
+</head>
+<body>
+    
+    <nav class="flex justify-between p-4 bg-gray-100">
+        <div class="font-bold text-[23px]"> <i class="fab fa-youtube text-red-700">YouTube </i></div>
+        <div class="flex gap-4">
+            <span class="border-2 border-black p-1 bg-white"><i class="fas fa-search">검색</i></span>
+            <span class="border-2 border-black p-1 font-bold text-blue-600 bg-white"><i class="far fa-user-circle">로그인</i></span>
+        </div>
+    </nav>
+
+    <header class="flex gap-2 p-2 border overflow-x-auto">
+        <button class="border px-2 rounded-xl">전체</button>
+        <button class="border px-2 rounded-xl">음악</button>
+        <button class="border px-2 rounded-xl">게임</button>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+        <div class="border p-1">
+            <img src="./이미지/이미지1.png" class="w-full aspect-video object-cover rounded-xl mb-2">
+            <p class="font-bold">tailwind 1도 모르겠다</p>
+            <p class="text-[14px]">조회수 3만2천회</p>
+        </div>
+        <div class="border p-1">
+            <img src="./이미지/이미지2.webp" class="w-full aspect-video object-cover rounded-xl mb-2">
+            <p class="font-bold">재미있는 코딩 배우기</p>
+            <p class="text-[14px]">조회수 1만2천회</p>
+        </div>
+    </main>
+
+    <footer class="p-5 bg-gray-100 text-center text-[10px]">
+        <p>2026 YouTube</p>
+    </footer>
+</body>
+</html>
+
+
+
+
