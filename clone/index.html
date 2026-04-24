@@ -10,10 +10,16 @@
 <body>
     
     <nav class="flex justify-between p-4 bg-gray-100">
-        <div class="font-bold text-[23px]"> <i class="fab fa-youtube text-red-700">YouTube </i></div>
+        <div class="font-bold text-[23px]"> <i class="fab fa-youtube text-red-700"></i>YouTube </div>
         <div class="flex gap-4">
-            <span class="border-2 border-black p-1 bg-white"><i class="fas fa-search">검색</i></span>
-            <span class="border-2 border-black p-1 font-bold text-blue-600 bg-white"><i class="far fa-user-circle">로그인</i></span>
+            <span 
+            class="flex border rounded-xl w-[700px]  ">
+            <input type="text" placeholder="검색" class="w-full">
+            <i class="fas fa-search py-2 "></i>
+            </span>
+            <!-- input 과 type=text를 이용해서 검색창 만들기(type="password")를 이용해 비밀번호 형식도 가능 -->
+
+             <span class="border-2 border-black p-1 font-bold text-blue-600 bg-white"><i class="far fa-user-circle">로그인</i></span>
         </div>
     </nav>
 
