@@ -8,9 +8,12 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>YouTube</title>
   </head>
@@ -24,18 +27,45 @@
           <a href="index.html">
             <i class="fas fa-bars px-4"></i
             ><i class="fab fa-youtube text-red-600"></i>
-            <span class="font-['Oswald'] font-normal">
-                YouTube
-            </span></a
+            <span class="font-['Oswald'] font-normal"> YouTube </span></a
           >
         </div>
 
-        <div class="flex gap-4">
-          <span class="flex border-2 rounded-3xl py-1 w-[700px]">
-            <input type="text" placeholder="검색" class="w-full pl-4 rounded-3xl" />
-            <i class="fas fa-search py-2 pr-2"></i>
-          </span>
-          <!-- input 과 type=text를 이용해서 검색창 만들기(type="password")를 이용해 비밀번호 형식도 가능 -->
+        <div class="flex items-center flex-1 max-w-[680px] ml-8 group">
+          <!-- 검색창 영역 -->
+          <div
+            class="relative flex flex-1 items-center bg-white border border-gray-300 border-r-0 rounded-l-full px-4 py-0 shadow-inner focus-within:border-blue-600 ml-8"
+          >
+            <!-- 검색 아이콘 -->
+            <i
+              class="fas fa-search text-[20px] text-black mr-2 hidden group-focus-within:block"
+            ></i>
+            <input
+              type="text"
+              placeholder="검색"
+              class="peer w-full h-[40px] outline-none text-base bg-transparent cursor-text"
+            />
+            <!-- 키보드 버튼 -->
+            <button>
+              <i
+                class="fas fa-keyboard text-gray-500 text-[18px] opacity-80"
+              ></i>
+            </button>
+            
+            <!-- x버튼 -->
+            <button
+              class="hidden peer-[:not(:placeholder-shown)]:block pl-4 pb-0.5 text-black text-[23px]"
+            >
+              <i class="fas fa-times "></i>
+            </button>
+          </div>
+
+          <!-- 검색버튼 -->
+          <button
+            class="flex items-center justify-center w-16 h-[41px] bg-gray-50 border border-gray-300 rounded-r-full hover:bg-gray-200 hover:shadow-sm transition-colors"
+          >
+            <i class="fas fa-search text-[23px]"></i>
+          </button>
         </div>
 
         <div>
