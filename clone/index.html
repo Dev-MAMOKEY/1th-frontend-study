@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jua&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>YouTube</title>
+  </head>
+  <body>
+    <header>
+      <div
+        role="tablist"
+        class="flex justify-between items-center p-4 bg-white"
+      >
+        <div class="font-bold text-[23px]">
+          <a href="index.html">
+            <i class="fas fa-bars px-4"></i
+            ><i class="fab fa-youtube text-red-600"></i>
+            <span class="font-['Oswald'] font-normal"> YouTube </span></a
+          >
+        </div>
+
+        <div class="flex items-center flex-1 max-w-[680px] ml-8 group">
+          <!-- 검색창 영역 -->
+          <div
+            class="relative flex flex-1 items-center bg-white border border-gray-300 border-r-0 rounded-l-full px-4 py-0 shadow-inner focus-within:border-blue-600 ml-8"
+          >
+            <!-- 검색 아이콘 -->
+            <i
+              class="fas fa-search text-[20px] text-black mr-2 hidden group-focus-within:block"
+            ></i>
+            <input
+              type="text"
+              placeholder="검색"
+              class="peer w-full h-[40px] outline-none text-base bg-transparent cursor-text"
+            />
+            <!-- 키보드 버튼 -->
+            <button>
+              <i
+                class="fas fa-keyboard text-gray-500 text-[18px] opacity-80"
+              ></i>
+            </button>
+            
+            <!-- x버튼 -->
+            <button
+              class="hidden peer-[:not(:placeholder-shown)]:block pl-4 pb-0.5 text-black text-[23px]"
+            >
+              <i class="fas fa-times "></i>
+            </button>
+          </div>
+
+          <!-- 검색버튼 -->
+          <button
+            class="flex items-center justify-center w-16 h-[41px] bg-gray-50 border border-gray-300 rounded-r-full hover:bg-gray-200 hover:shadow-sm transition-colors"
+          >
+            <i class="fas fa-search text-[23px]"></i>
+          </button>
+        </div>
+
+        <div>
+          <span class="text-2xl">
+            <i class="far fa-bell"></i>
+          </span>
+
+          <span
+            class="border p-1 font-bold text-blue-600 bg-white rounded-3xl p-2"
+          >
+            <a
+              href="https://myaccount.google.com/?hl=ko&utm_source=OGB&utm_medium=act&gar=WzJd"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="far fa-user-circle text-2xl"></i>로그인</a
+            >
+          </span>
+        </div>
+      </div>
+
+      <div class="flex gap-2 p-2 border overflow-x-auto">
+        <button
+          class="border px-2 rounded-lg bg-gray-200 text-black font-bold active:bg-black active:text-white"
+        >
+          전체
+        </button>
+        <button
+          class="border px-2 rounded-lg bg-gray-200 text-black font-bold active:bg-black active:text-white"
+        >
+          음악
+        </button>
+        <button
+          class="border px-2 rounded-lg bg-gray-200 text-black font-bold active:bg-black active:text-white"
+        >
+          게임
+        </button>
+        <button
+          class="border px-2 rounded-lg bg-gray-200 text-black font-bold active:bg-black active:text-white"
+        >
+          뉴스
+        </button>
+        <button
+          class="border px-2 rounded-lg bg-gray-200 text-black font-bold active:bg-black active:text-white"
+        >
+          라이브
+        </button>
+        <button
+          class="border px-2 rounded-lg bg-gray-200 text-black font-bold active:bg-black active:text-white"
+        >
+          액션 어드벤처 게임
+        </button>
+        <button
+          class="border px-2 rounded-lg bg-gray-200 text-black font-bold active:bg-black active:text-white"
+        >
+          감상한 동영상
+        </button>
+        <button
+          class="border px-2 rounded-lg bg-gray-200 text-black font-bold active:bg-black active:text-white"
+        >
+          새로운 맞춤 동영상
+        </button>
+      </div>
+    </header>
+
+    <main class="flex flex-wrap gap-4 p-4">
+      <div class="flex-1 min-w-[525px] p-1 hover:bg-blue-100 rounded-xl">
+        <a href="https://youtu.be/efSQffTqw0M?si=nMcCBzHyDSMOUtiL">
+          <img
+            src="./이미지/이미지1.png"
+            alt="tailwind css"
+            class="w-full aspect-video object-cover rounded-xl mb-2"
+          />
+          <p class="font-bold">tailwind 1도 모르겠다</p>
+          <p class="text-[14px]">조회수 3만2천회</p>
+        </a>
+      </div>
+
+      <div class="flex-1 min-w-[525px] p-1 hover:bg-blue-100 rounded-xl">
+        <a href="https://youtu.be/erFhR4CO5Js?si=rs6egTPzWfVzN1JV">
+          <img
+            src="./이미지/이미지2.webp"
+            alt="코딩을 재미있게 배우세요"
+            class="w-full aspect-video object-cover rounded-xl mb-2"
+          />
+          <p class="font-bold">재미있는 코딩 배우기</p>
+          <p class="text-[14px]">조회수 1만2천회</p>
+        </a>
+      </div>
+
+      <div class="flex-1 min-w-[525px] p-1 hover:bg-blue-100 rounded-xl">
+        <a href="https://youtu.be/Y_Fmn4XGXF8?si=a8Tup3WRwW5WOjeC">
+          <img
+            src="./이미지/골든리트리버(3).jpg"
+            alt="골든리트리버"
+            class="w-full aspect-video object-cover rounded-xl mb-2"
+          />
+          <p class="font-bold">귀여운 골든 리트리버 보고가세요~</p>
+          <p class="text-[14px]">조회수 12만회</p>
+        </a>
+      </div>
+
+      <div class="flex-1 min-w-[525px] p-1 hover:bg-blue-100 rounded-xl">
+        <a href="https://youtu.be/D6bCv_2C8Sc?si=ul9DMJZMpist1Jj7">
+          <img
+            src="./이미지/탱커노조(4).jpg"
+            alt="오버워치 탱커 노조"
+            class="w-full aspect-video object-cover rounded-xl mb-2"
+          />
+          <p class="font-bold">오버워치 탱커하다 탱장연 되는 이유</p>
+          <p class="text-[14px]">조회수 8만2천회</p>
+        </a>
+      </div>
+
+      <div class="flex-1 min-w-[525px] p-1 hover:bg-blue-100 rounded-xl">
+        <a href="https://youtu.be/BkgM4kC3mss?si=fplOPvzwZSYQ_t8N">
+          <img
+            src="./이미지/마최미(5).jpg"
+            alt="마법소녀 프리큐어 아르카나"
+            class="w-full aspect-video object-cover rounded-xl mb-2"
+          />
+          <p class="font-bold">성인들도 홀린 마법소녀 프리큐어</p>
+          <p class="text-[14px]">조회수 6만4천회</p>
+        </a>
+      </div>
+
+      <div class="flex-1 min-w-[525px] p-1 hover:bg-blue-100 rounded-xl">
+        <a href="https://youtube.com/shorts/BFz4lW6vRS8?si=GfyVFeSXBWNCW98d">
+          <img
+            src="./이미지/왜..이렇게 됐지..(6).jpg"
+            alt="코딩이 망하는 순간"
+            class="w-full aspect-video object-cover rounded-xl mb-2"
+          />
+          <p class="font-bold">코딩하다가 뭔가 이상할때.. 그건 이미...</p>
+          <p class="text-[14px]">조회수 3만2천회</p>
+        </a>
+      </div>
+
+      <div class="flex-1 min-w-[300px] p-1 hover:bg-blue-100 rounded-xl">
+        <a href="https://youtube.com/shorts/0FjOhEJwmB8?si=tskDHqA6oI-7bR1v">
+          <img
+            src="./이미지/코딩을 잘못하면.. 날아가요~(7).jpg"
+            alt="비둘기는 머리로 날아다닌다(?)"
+            class="w-full aspect-video object-cover rounded-xl mb-2"
+          />
+          <p class="font-bold">뭔가.. 잘못되었다..</p>
+          <p class="text-[14px]">조회수 4만2천회</p>
+        </a>
+      </div>
+
+      <div class="flex-1 min-w-[525px] p-1 hover:bg-blue-100 rounded-xl">
+        <a href="https://youtu.be/v9nwiR2QIYk?si=2YYnCTjoISjocFz-">
+          <img
+            src="./이미지/노래플리(8).jpg"
+            alt="노래 플레이리스트"
+            class="w-full aspect-video object-cover rounded-xl mb-2"
+          />
+          <p class="font-bold">한번 들으면 반해버리는 노래 playlist</p>
+          <p class="text-[14px]">조회수 128만회</p>
+        </a>
+      </div>
+
+      <div class="flex-1 min-w-[525px] p-1 hover:bg-blue-100 rounded-xl">
+        <a href="https://youtu.be/E7yd79v43MA?si=Py7xTKvmndy4Dlvm">
+          <img
+            src="./이미지/내가 코딩 위에 서겠다(9).png"
+            alt="마음만은 코딩굇수"
+            class="w-full aspect-video object-cover rounded-xl mb-2"
+          />
+          <p class="font-bold">"내가 코딩 위에 서겠다"</p>
+          <p class="text-[14px]">조회수 5만4천회</p>
+        </a>
+      </div>
+    </main>
+
+    <footer class="p-5 bg-gray-100 text-center text-[10px]">
+      <p>2026 YouTube | 약관 | 개인정보처리방침 | 문의하기</p>
+    </footer>
+  </body>
+</html>
