@@ -183,3 +183,10 @@ function resetCalculator() {
     // 화면에 반영
     showHistory();
 }
+
+
+
+
+// 버튼 이벤트 연결 (이벤트 : click)
+document.getElementById("calculateBtn").addEventListener("click", calculate);
+document.getElementById("resetBtn").addEventListener("click", resetCalculator);
