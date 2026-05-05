@@ -99,7 +99,16 @@ function getCalculationResult(num1, num2, operatorValue, num2Input) {
     return null;    // 값이 없음
 }
 
+// 계산 기록 문자열 생성 함수
+function createRecord(num1, operatorValue, num2, result) {
+    return `${num1} ${operatorValue} ${num2} = ${result}`;
+}
 
+
+// 계산 기록을 배열에 저장하는 함수
+function saveHistory(record) {
+    historyList.push(record);
+}
 
 // 계산 실행 함수
 function calculate() {
@@ -132,10 +141,10 @@ function calculate() {
     resultBox.textContent = `결과: ${result}`;
 
     // 계산 기록 문자열 생성
-    const record = `${num1} ${operatorValue} ${num2} = ${result}`;
+    const record = createRecord(num1, operatorValue, num2, result);
 
     // 계산 기록 배열에 저장
-    historyList.push(record);
+    saveHistory(record);
 
     // 기록 화면 업데이트
     showHistory();
