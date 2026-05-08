@@ -75,6 +75,10 @@ button {
   background-color: #2f80ed;
 }
 
+.minus-btn {
+  background-color: #f2994a;
+}
+
 .delete-btn {
   background-color: #eb5757;
 }
