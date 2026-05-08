@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨 알리미</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">   <!--중앙 정렬을 위해 필요 -->
+        
+        <!--지역을 선택하는 버튼들이 모여있는 곳 --> 
+        <div class="city-selection">    
+            <!-- active 클래스가 붙은 버튼은 현재 선택된 상태. -->
+            <button id="city-seoul" class="city-btn active">서울</button>
+            <button id="city-gyeonggi" class="city-btn">경기도</button>
+            <button id="city-busan" class="city-btn">부산</button>
+        </div>
+         
+
+
+        <!-- 현재 선택된 지역의 날씨 정보를 아주 크게 보여주는 영역입니다. -->
+        <div class="current-weather">     
+            <div id="current-icon" class="large-icon"></div>    <!-- 현재 온도 아이콘(큰)이 들어가는 자리. -->
+            <div id="current-temp" class="large-temp"></div>    <!-- 현재온도: x도가 들어가는 자리. -->
+        </div>
+
+
+
+        <!-- 온도 단위전환하는 영역. -->
+        <div class="unit-toggle">
+            <!-- 배경과 테두리가 없는 텍스트 형태의 버튼. -->
+            <button id="unit-c" class="unit-btn active">°C</button>
+            <span class="separator">/</span> <!-- 섭씨, 화씨 사이의 구분선 -->
+            <button id="unit-f" class="unit-btn">°F</button>
+        </div>
+
+
+
+
+        <!-- 월요일부터 일요일 박스-->
+        <div class="days-container">
+            <!-- data-day는 js에서 몇 번째 요일인지 순서를 알기 위해 붙인 번호표. -->
+            <div class="day-box" data-day="0">
+                <div class="weather-icon"></div> <!-- 작은 날씨 아이콘 자리 -->
+                <div class="day-text">월</div>      <!-- 요일 이름 -->
+                <div class="day-temp"></div>      <!-- 작은 온도 표시 자리 -->
+            </div>
+            <div class="day-box" data-day="1">
+                <div class="weather-icon"></div>
+                <div class="day-text">화</div>
+                <div class="day-temp"></div>
+            </div>
+            <div class="day-box" data-day="2">
+                <div class="weather-icon"></div>
+                <div class="day-text">수</div>
+                <div class="day-temp"></div>
+            </div>
+            <div class="day-box" data-day="3">
+                <div class="weather-icon"></div>
+                <div class="day-text">목</div>
+                <div class="day-temp"></div>
+            </div>
+            <div class="day-box" data-day="4">
+                <div class="weather-icon"></div>
+                <div class="day-text">금</div>
+                <div class="day-temp"></div>
+            </div>
+            <div class="day-box" data-day="5">
+                <div class="weather-icon"></div>
+                <div class="day-text">토</div>
+                <div class="day-temp"></div>
+            </div>
+            <div class="day-box" data-day="6">
+                <div class="weather-icon"></div>
+                <div class="day-text">일</div>
+                <div class="day-temp"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
