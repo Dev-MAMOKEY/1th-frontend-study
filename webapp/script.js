@@ -60,8 +60,17 @@ productList.addEventListener("click", function (event){
     // 만약 클릭한 요소의 class에 "add-btn"이 있다면
     if (event.target.classList.contains("add-btn")){
 
-        //data- 형태의 요소 출력
-        console.log(event.target.dataset.id);
+        //클릭 요소 data- 형태의 요소 출력
+        const productId = Number(event.target.dataset.id);
+
+        // 클릭한 요소가 실제 상품데이터와 일치하는지 확인
+        const selectedProduct = products.find(function (product){ // find - true면 해당 객체 반환
+            return product.id === productId; // true, false 출력
+        });
+
+        // cart 배열에 삽입
+        cart.push(selectedProduct);
+        
     }
 })
 
