@@ -13,9 +13,9 @@ const totalPrice = document.querySelector("#total-price");
 
 // 상품 데이터
 const products = [
-    { id: 1, name: "노트북", price: 1200000 },
-    { id: 2, name: "마우스", price: 30000 },
-    { id: 3, name: "키보드", price: 80000 }
+    { id: 1, name: "노트북", price: 500000 },
+    { id: 2, name: "마우스", price: 10000 },
+    { id: 3, name: "키보드", price: 50000 }
 ];
 
 
@@ -108,11 +108,15 @@ function showCart() {
         // div 요소, 즉 cartItem 하나 당 클래스 적용
         cartItem.classList.add("cart-item");
 
+        // 상품별 총 금액 계산
+        const itemTotalPrice = item.price * item.quantity;
+
         // div(carttItem)에 요소 삽입 
         cartItem.innerHTML = `
             <span>${item.name}</span>
             <strong>${item.price}</strong>
             <span>수량 : ${item.quantity}</span>
+            <span>합계: ${itemTotalPrice.toLocaleString()}원</span>
             <button class="minus-btn" data-id="${item.id}">-1</button>
             <button class="delete-btn" data-id="${item.id}">목록 삭제</button>
         `;
@@ -121,6 +125,8 @@ function showCart() {
         cartList.appendChild(cartItem);
 
     })
+
+    calculateTotalPrice();
 }
 
 
@@ -138,14 +144,11 @@ cartList.addEventListener("click", function (event) {
             return item.id === cartId;
         });
 
-        // 찾은 상품의 수량을 1 감소
-        selectedCart.quantity -= 1;
-
-        // 만약 수량이 1미만이 되면 cart 배열에서 제거
-        if (selectedCart.quantity < 1) {
+        // 만약 수량이 1이하가 되면 cart 배열에서 제거
+        if (selectedCart.quantity <= 1) {
 
             // 삭제 전 경고창
-            const result = confirm(`${selectedCart.name}의 모든 수량을 장바구니에서 삭제할까요?`);
+            const result = confirm(`해당 상품(${selectedCart.name})을 장바구니에서 삭제할까요?`);
 
             // 사용자가 취소를 누르면 해당 시점에서 코드 종료
             if (result === false) {
@@ -157,6 +160,9 @@ cartList.addEventListener("click", function (event) {
                 return item.id !== cartId; // 같지 않다면 true, 같으면 false
             });
         }
+
+        // 찾은 상품의 수량을 1 감소
+        selectedCart.quantity -= 1;
 
         // 장바구니 화면 다시 출력
         showCart();
@@ -179,7 +185,7 @@ cartList.addEventListener("click", function (event) {
         });
 
         // 삭제 전 경고창
-        const result = confirm(`${selectedCart.name}의 모든 수량을 장바구니에서 삭제할까요?`);
+        const result = confirm(`해당 상품(${selectedCart.name})을 장바구니에서 삭제할까요?`);
 
         // 사용자가 취소를 누르면 해당 시점에서 코드 종료
         if (result === false) {
@@ -195,6 +201,21 @@ cartList.addEventListener("click", function (event) {
         showCart();
     }
 })
+
+
+// 총 합계 (DOM : totalPrice)
+function calculateTotalPrice(){ 
+
+    let total = 0;
+
+    cart.forEach(function (item){
+        total += item.price * item.quantity;
+
+    });
+
+    // DOM요소 안 textContent 변경
+    totalPrice.textContent = total.toLocaleString();
+}
 
 
 
