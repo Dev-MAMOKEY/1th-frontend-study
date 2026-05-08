@@ -72,7 +72,7 @@ function getNumbers(num1Input, num2Input) {
 
 
 // 실제 계산을 처리하는 함수
-function getCalculationResult(num1, num2, operatorValue, num2Input) {
+function handleCalculation(num1, num2, operatorValue, num2Input) {
 
     if (operatorValue === "+") {
         return num1 + num2;
@@ -105,11 +105,6 @@ function createRecord(num1, operatorValue, num2, result) {
 }
 
 
-// 계산 기록을 배열에 저장하는 함수
-function saveHistory(record) {
-    historyList.push(record);
-}
-
 // 계산 실행 함수
 function calculate() {
 
@@ -130,7 +125,7 @@ function calculate() {
     const operatorValue = operator.value;
 
     // 계산 실행
-    const result = getCalculationResult(num1, num2, operatorValue, num2Input);
+    const result = handleCalculation(num1, num2, operatorValue, num2Input);
 
     // 계산이 실패한 경우 함수 종료
     if (result === null) {
@@ -144,7 +139,7 @@ function calculate() {
     const record = createRecord(num1, operatorValue, num2, result);
 
     // 계산 기록 배열에 저장
-    saveHistory(record);
+    historyList.push(record);
 
     // 기록 화면 업데이트
     showHistory();
