@@ -42,9 +42,9 @@ function updateWeather() {
     if (currentUnit === 'F') {
         // 단위가 화씨라면 공식에 맞춰 계산.
         mainTemp = Math.round((mainTemp * 9/5) + 32);  //math.round() = 소수점 없앰
-        currentTempEl.innerText = `현재온도: ${mainTemp}°F`;
+        currentTempEl.innerHTML = `현재온도: <span style="color: #ff6b6b;">${mainTemp}°F</span>`;
     } else {
-        currentTempEl.innerText = `현재온도: ${mainTemp}°C`;
+        currentTempEl.innerHTML = `현재온도: <span style="color: #ff6b6b;">${mainTemp}°C</span>`;
     }
     
     // 하단 7개 각 요일 박스들 업데이트
@@ -59,9 +59,9 @@ function updateWeather() {
         let temp = data[index].temp;
         if (currentUnit === 'F') {
             temp = Math.round((temp * 9/5) + 32); 
-            tempEl.innerText = `${temp}°F`;
+            tempEl.innerHTML = `${temp}<small>°F</small>`;
         } else {
-            tempEl.innerText = `${temp}°C`;
+            tempEl.innerHTML = `${temp}<small>°C</small>`;
         }
     });
 }
