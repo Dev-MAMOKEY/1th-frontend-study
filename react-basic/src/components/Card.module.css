@@ -1,0 +1,34 @@
+body{
+    background-color: #eee;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+.template {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  width: 280px;
+  background-color: #ffffff;
+}
+
+
+.template h3 {
+  margin-top: 0;
+  color: #333;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #d0cfcf;
+}
+
+.template p {
+  margin: 10px;
+  color: #666;
+}
