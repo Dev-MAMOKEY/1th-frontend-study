@@ -1,17 +1,3 @@
-body{
-    background-color: #eee;
-}
-
-.container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-
 .template {
   border: 1px solid black;
   border-radius: 20px;
