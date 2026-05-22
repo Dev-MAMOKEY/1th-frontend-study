@@ -1,0 +1,43 @@
+.todoListItems {
+    margin-top: 50px;
+}
+
+.todoListItems ul {
+    list-style-type: none;  /* 리스트 점 지우기 */
+    margin: 0;
+    padding: 0;
+}
+
+.todoListItems li {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: 2px solid gainsboro;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.todoListItems span {
+    flex: 1;
+}
+
+.todoListItems span.completed {
+    text-decoration: line-through;     /*completed class 추가시 라인 긋기*/
+}
+
+.todoListItems input {
+    margin-right: 14px;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.todoListItems button {
+    background-color: rgb(220, 30, 30);
+    padding: 8px 12px;
+    border: 2px solid black;
+    border-radius: 7px;
+    font-weight: 700;
+    cursor: pointer;
+}

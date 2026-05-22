@@ -1,0 +1,35 @@
+/* input 컨테이너 */
+.todoInput {
+    display: flex;
+    height: 40px;
+    gap: 12px;
+}
+
+
+/* input 영역 */
+.todoInput input{
+    flex: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid gainsboro;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.todoInput input:focus{     /*input 클릭시 테두리 바꾸기*/
+    outline: none;
+    border: 2px solid skyblue;
+}
+
+
+/* 버튼 영역 */
+.todoInput button{
+    background-color: greenyellow;
+    border: 2px solid black;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 700;
+    padding-left: 18px;
+    padding-right: 18px;
+    cursor: pointer;   /* 마우스에 닿을시 마우스 클릭 모양으로 변환 */
+}
