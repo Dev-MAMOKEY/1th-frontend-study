@@ -31,7 +31,8 @@ function App() {
 
         const newTodo = {
             id: Date.now(),
-            text: text
+            text: text,
+            completed: false
         };
 
         //기존 todos 배열이 바뀌지 않게 복사한 새 배열을 만들고, 그 뒤에 newTodo를 추가 = 상태값 변경
@@ -45,6 +46,31 @@ function App() {
         // key값으로 todos, 문자열로 넘김
         localStorage.setItem("todos", JSON.stringify(todos));
     }, [todos])
+
+
+    // 완료 상태 변경
+    function toggleTodo(id) {
+
+        // todos 목록을 펼치고, 
+        const updatedTodos = todos.map((todo) => {
+
+            // todo.id와 현재 클릭한 id가 같으면
+            if (todo.id === id) {
+
+                // 기존 todo 객체 복사 후, completed 값만 바꾼 새 객체를 반환
+                return {
+                    ...todo,
+                    completed: !todo.completed,
+                };
+            }
+
+            // updatedTodos = todos
+            return todo;
+        });
+
+        // 새로운 todo값으로 상태 변환
+        setTodos(updatedTodos);
+    }
 
 
 
@@ -62,7 +88,10 @@ function App() {
                     // 컴포넌트를 화면에 그려야하므로 리턴
                     return (
                         <TodoItem
+                            key={todo.id} // 반복되는 컴포넌트에는 key 값으로 구분할 수 있도록
                             todo={todo}
+                            onToggleTodo={toggleTodo}
+
                         />
                     );
                 })}
