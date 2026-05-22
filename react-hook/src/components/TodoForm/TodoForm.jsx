@@ -24,6 +24,8 @@ function TodoForm({ onAddTodo }) {
       return;
     }
 
+    onAddTodo(inputText);
+
   }
 
   return (
