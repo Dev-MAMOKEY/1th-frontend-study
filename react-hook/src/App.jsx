@@ -14,14 +14,11 @@ function App() {
 
         // 기존 로컬스토리지에 저장된 투두가 없을 경우
         if (savedTodos === null || savedTodos === "[]") {
-            console.log("저장된 todos가 없습니다.");
             return;
         }
 
         // 기존 로컬스토리지에 저장된 투두가 있을 경우 -> 상태값 변환 (가져오기)
         setTodos(JSON.parse(savedTodos));
-
-        console.log("화면이 생성됐습니다");
     }, []);
 
 
