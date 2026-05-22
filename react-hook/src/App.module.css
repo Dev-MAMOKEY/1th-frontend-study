@@ -1,0 +1,22 @@
+.container {
+  width: 420px;
+  margin: 60px auto;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #f8fafc;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1e293b;
+}
+
+.todoList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  margin-top: 20px;
+}
