@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import TodoForm from "./components/TodoForm/TodoForm";
+import TodoItem from "./components/TodoItem/TodoItem";
 import styles from "./App.module.css";
 
 function App() {
@@ -43,7 +44,6 @@ function App() {
 
         // key값으로 todos, 문자열로 넘김
         localStorage.setItem("todos", JSON.stringify(todos));
-        console.log(todos);
     }, [todos])
 
 
@@ -54,6 +54,19 @@ function App() {
 
             {/* App에서 사용할 수 있는 함수를 컴포넌트도 다른 이름으로 사용할 수 있도록 넘겨줌(props) */}
             <TodoForm onAddTodo={addTodo} />
+
+            {/* 화면에 리스트 추가 */}
+            <ul className={styles.todoList}>
+                {/* map으로 리스트 개별요소 확인 */}
+                {todos.map((todo) => {
+                    // 컴포넌트를 화면에 그려야하므로 리턴
+                    return (
+                        <TodoItem
+                            todo={todo}
+                        />
+                    );
+                })}
+            </ul>
 
         </main>
     );
