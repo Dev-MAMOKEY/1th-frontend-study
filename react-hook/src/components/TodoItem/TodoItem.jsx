@@ -1,6 +1,6 @@
 import styles from "./TodoItem.module.css";
 
-function TodoItem({ todo, onToggleTodo }) {
+function TodoItem({ todo, onToggleTodo, onDeleteTodo }) {
   return (
     <li className={styles.todoItem}>
 
@@ -31,6 +31,11 @@ function TodoItem({ todo, onToggleTodo }) {
         {/* 삭제 버튼 */}
         <button
           className={styles.deleteButton}
+
+          //  App props로 해당 id로 함수 실행
+          onClick={() => {
+            onDeleteTodo(todo.id);
+          }}
         >
           삭제
         </button>

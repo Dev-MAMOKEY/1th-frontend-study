@@ -73,6 +73,20 @@ function App() {
     }
 
 
+    // 투두 삭제
+    function deleteTodo(id) {
+
+        const filteredTodos = todos.filter((todo) => {
+
+            // 현재 id와 다른 todo.id만 살린다
+            return todo.id !== id;
+        });
+
+        // filter된 객체 배열 로컬스토리지에 저장(상태 변환)
+        setTodos(filteredTodos);
+    }
+
+
 
     return (
         <main className={styles.container}>
@@ -89,9 +103,9 @@ function App() {
                     return (
                         <TodoItem
                             key={todo.id} // 반복되는 컴포넌트에는 key 값으로 구분할 수 있도록
-                            todo={todo}
+                            todo={todo} // 현재 todo를 props로 사용
                             onToggleTodo={toggleTodo}
-
+                            onDeleteTodo={deleteTodo}
                         />
                     );
                 })}
