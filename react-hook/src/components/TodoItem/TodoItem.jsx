@@ -1,6 +1,6 @@
 import styles from "./TodoItem.module.css";
 
-function TodoItem({ todo }) {
+function TodoItem({ todo, onToggleTodo }) {
   return (
     <li className={styles.todoItem}>
 
