@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f5f9;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto; /*위아래 좌우*/
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #1e293b;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+.section-box {
+  background-color: white;
+  margin-top: 30px;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* (그림자) 좌우 이동, 아래 이동, 퍼지는 정도, 색상*/
+}
+
+.section-box h2 {
+  margin-top: 0;
+  color: #334155;
+}
+
+.count-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+button {
+  margin-right: 10px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.minus-btn {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.plus-btn {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.pink-btn {
+  background-color: #ffe4e6;
+  color: #be123c;
+  font-weight: bold;
+}
+
+.blue-btn {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  font-weight: bold;
+}
+
+.green-btn {
+  background-color: #dcfce7;
+  color: #15803d;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #bfdbfe;
+}
+
+.card-list {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap; /* 한 줄에 다 안 들어가면 다음 줄로*/
+}
+
+.card {
+  flex: 1;
+  min-width: 200px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+.card p {
+  color: #475569;
+}
+
+.color-box {
+  transition: background-color 0.3s;
+}
