@@ -4,6 +4,9 @@ import "./App.css";
 
 function App() {
 
+  // 검색 키워드
+  const [keyword, setKeyword] = useState("");
+
   // 영화 배열
   const [movies, setMovies] = useState([]);
 
@@ -56,20 +59,69 @@ function App() {
   }, []);
 
 
+  // 검색 버튼 클릭 시 영화 검색
+  async function searchMovies() {
+
+    // 현재 입력된 부분에서 공백을 제거하고 값이 없으면 경고창 나오게하고 함수 종료
+    if (keyword.trim() === "") {
+      alert("검색어를 입력해주세요.");
+      return;
+    }
+
+
+    try {
+
+      // 로딩 부분 상태변환 함수 true -> 로딩 태그 실행
+      setLoading(true);
+
+      // 에러메시지 상태 변환함수 초기화
+      setErrorMessage("");
+
+      // 영화 목록 배열 상태변환 함수 초기화
+      setMovies([]);
+
+      // search/movie 엔드포인트로 쿼리(검색값을 주고) 쿼리값으로 된 곳의 page 1을 가져오는 걸로
+      const response = await tmdbApi.get("/search/movie", {
+        params: {
+          query: keyword,
+          page: 1,
+        },
+      });
+
+      console.log(response.data.results)
+
+      // 검색 관련 데이터 배열형태로 가져옴
+      setMovies(response.data.results);
+
+
+      // 에러 발생 시 set함수에 메시지 적용 -> set함수는 변경되었고, 값이 있으므로 true이기 때문에 화면에 태그 표시
+    } catch (error) {
+      setErrorMessage("영화 검색 중 오류가 발생했습니다.");
+    
+    // 무조건 실행
+    } finally {
+
+      // 로딩 상태변화 함수에 false로 설정하여 로딩 중 태그 화면에서 제거
+      setLoading(false);
+    }
+  }
+
   return (
     <main>
       <h1>Option A — 영화 검색 앱 (TMDB API)</h1>
 
       <section className="card">
 
-
         {/* input, button */}
         <div className="search-box">
+
           <input
+            value={keyword}
+            onChange={(event) => setKeyword(event.target.value)}
             placeholder="영화 제목 입력"
           />
 
-          <button>검색</button>
+          <button onClick={searchMovies}>검색</button>
         </div>
 
 
@@ -81,6 +133,7 @@ function App() {
 
 
         <div className="movie-list">
+
 
           {/* movies의 배열에서 하나의 객체를 map으로 펼쳐서 하나의 객체를 movie로 설정*/}
           {movies.map((movie) => (
