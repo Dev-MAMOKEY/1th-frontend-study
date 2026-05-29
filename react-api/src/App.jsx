@@ -88,8 +88,6 @@ function App() {
         },
       });
 
-      console.log(response.data.results)
-
       // 검색 관련 데이터 배열형태로 가져옴
       setMovies(response.data.results);
 
