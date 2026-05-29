@@ -1,0 +1,31 @@
+body{
+  background-color: black;
+  color: white;
+}
+
+.movieContainer{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.navigationBar{
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.movieList {
+  display: flex;       
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.status {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 50px;
+  color: white;
+}

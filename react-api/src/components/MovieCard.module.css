@@ -1,0 +1,28 @@
+.movieCard {
+  border: 1px solid white;
+  padding: 10px;
+  background-color: #222;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1 1 200px;   /*늘어나기 배율1, 줄어들기 배율1, 기본 200px*/
+  max-width: 200px;
+}
+
+.movieCard img {
+  width: 100%; 
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.movieCard h3 {
+  font-size: 16px;
+  margin: 10px 0;
+  white-space: nowrap;   /*글자가 아무리 길어도 강제로 한 줄*/
+  overflow: hidden;     /*박스 밖으로 나가면 안보이게*/
+  text-overflow: ellipsis;     /*글자가 넘쳐서 안보이게 한 자리에는 (...) 붙이기*/
+}
+
+.movieCard p {
+  font-size: 14px;
+  color: #ccc;
+}
