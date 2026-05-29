@@ -5,24 +5,22 @@ import styles from "./App.module.css";
 
 function App() {
 
-    // 객체 배열 상태 변수 선언
-    const [todos, setTodos] = useState([]);
+    // 객체 배열 상태 변수 선언 (초기값을 함수로 선언)
+    const [todos, setTodos] = useState(() => {
 
-    // 화면을 처음 그릴 때 실행(로컬스토리지에 저장된 내용 가져오기)
-    useEffect(() => {
+        // 화면을 처음 그릴 때 실행(로컬스토리지에 저장된 내용 가져오기)
         const savedTodos = localStorage.getItem("todos");
 
         // 기존 로컬스토리지에 저장된 투두가 없을 경우
         if (savedTodos === null || savedTodos === "[]") {
-            return;
+            return [];
         }
 
-        // 기존 로컬스토리지에 저장된 투두가 있을 경우 -> 상태값 변환 (가져오기)
-        setTodos(JSON.parse(savedTodos));
-    }, []);
+        // 기존 로컬스토리지에 저장된 투두가 있을 경우 -> 초기값으로 리턴
+        return JSON.parse(savedTodos)
+    });
 
-
-
+    
     // 투두 객체 생성
     function addTodo(text) {
 

@@ -26,6 +26,9 @@ function TodoForm({ onAddTodo }) {
 
     onAddTodo(inputText);
 
+    // 입력 값 초기화
+    setInputText("");
+
   }
 
   return (
