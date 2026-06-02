@@ -4,7 +4,7 @@ import Header from './components/Header';
 import MovieCard from './components/MovieCard';
 import SearchBar from './components/SearchBar';
 
-const API_KEY = "259a45f6926074b23219629579978521";
+const API_KEY = "";
 const MOVIE_API_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=ko-KR&page=1&region=KR`;
 
 function App() {
