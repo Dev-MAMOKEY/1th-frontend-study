@@ -26,6 +26,7 @@ https://shiincs.github.io/day-38/ (try, catch, finally 관련2)
 
 ----
 
+예시로
 ```jsx
 <input onChange={(e) => {console.log(e.target.value); }} />
 ```
