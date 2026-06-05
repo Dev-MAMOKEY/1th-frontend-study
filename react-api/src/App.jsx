@@ -88,6 +88,12 @@ function App() {
         },
       });
 
+
+      if (response.data.results.length === 0) {
+        setErrorMessage("검색된 영화가 없습니다.");
+        return;
+      }
+
       // 검색 관련 데이터 배열형태로 가져옴
       setMovies(response.data.results);
 
