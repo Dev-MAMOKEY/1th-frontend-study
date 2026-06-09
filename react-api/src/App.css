@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #111;
+}
+
+main {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #f7f7f7;
+  padding: 30px;
+  border-radius: 4px;
+  max-width: 800px;
+}
+
+.search-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 250px;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  background-color: #8b5cf6;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #7c3aed;
+}
+
+.error {
+  color: red;
+}
+
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.movie-card {
+  display: flex;
+  gap: 16px;
+  background-color: white;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.movie-card img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.movie-card h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.movie-card p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.no-image {
+  width: 100px;
+  height: 150px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+
+/* 미디어 쿼리, 사용자 선호 색상 조건 : 다크 */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111827;
+    color: #f9fafb;
+  }
+
+  .card {
+    background-color: #1f2937;
+  }
+
+  .movie-card {
+    background-color: #374151;
+  }
+
+  input {
+    background-color: #111827;
+    color: #f9fafb;
+    border: 1px solid #4b5563;
+  }
+
+  input::placeholder {
+    color: #9ca3af;
+  }
+
+  .no-image {
+    background-color: #4b5563;
+    color: #f9fafb;
+  }
+
+  .error {
+    color: #f87171;
+  }
+}
