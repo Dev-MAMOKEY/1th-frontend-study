@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- 문서 설정 영역 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>박정원 프로필</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>박정원</h1>
+    <p><span>프론트엔드 개발</span>을 배우고 있습니다.<br>2026.07.27 ~ </p>
+  </header>
+
+  <main class="main">
+    <!-- class="main"은 CSS에서 본문 전체 너비, 
+     여백 등을 조절하려고 붙인 이름이야. -->
+    <section class="section profile-card">
+      <!-- section은 관련 있는 내용을 하나의 구역으로 묶을 때 씀 -->
+      <img class="profile-image" src="profile-image.jpg" alt="박정원 프로필 이미지">
+<!-- src="profile-image.jpg"는 사용할 이미지 파일 이름이야. -->
+ <!-- alt="박정원 프로필 이미지"는 이미지가 안 뜰 때 대신 보여줄 설명 -->
+  <!-- class="profile-image"는 CSS에서 이미지 크기, 둥근 모양, 비율 등을 조절하기 위해 붙인 이름 -->
+      <div class="profile-info">
+        <!-- div는 특별한 의미보다는 내용을 묶기 위한 기본 박스라고 보면 돼.
+class="profile-info"는 소개 글 영역만 따로 CSS로 조절하기 위해 붙임 -->
+        <h2>소개</h2>
+        <p>전공: 소프트웨어융합</p>
+        <p>방산 분야에 관심이 있으며, 다양한 프로젝트 경험을 통해 협업 역량을 키워 가고 싶습니다.</p>
+      </div>
+    </section>
+
+    <section class="section interest-section">
+      <h2>관심사</h2>
+      <ul>
+        <li>안정적인 화면 구현</li>
+        <li>사용자 흐름을 고려한 개발</li>
+        <li>협업 프로젝트</li>
+      </ul>
+    </section>
+
+    <section class="section skill-section">
+      <h2>기술 목록</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Git / GitHub</li>
+      </ul>
+    </section>
+  </main>
+  <!-- 본문 영역 전체가 끝났다는 의미 -->
+
+  <footer class="footer">
+    <!-- 페이지의 하단 영역 -->
+     <!-- class="footer"는 CSS에서 하단 디자인을 주기 위해 붙임 -->
+    <p>© 2026 박정원 | Profile Page</p>
+    <p>GitHub: <a href="https://github.com/jeongwon028/Profile" target="_blank">jeongwon028</a></p>
+    <!-- <a>는 링크를 만드는 태그. href="..."는 클릭했을 때 이동할 주소야.
+      target="_blank"는 링크를 새 탭에서 열라는 뜻 -->
+  </footer>
+  <!-- 화면에 보이는 내용 전체가 끝났다는 뜻 -->
+</body>
+</html>
+<!-- class는 CSS로 디자인하기 위한 이름표 -->
